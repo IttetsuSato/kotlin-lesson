@@ -1,5 +1,8 @@
 package com.uzabase.corporateproduct.lesson.demo.controller
 
+// jakartaってなんだろう
+import com.uzabase.corporateproduct.lesson.demo.validator.StartBeforeEnd
+import com.uzabase.corporateproduct.lesson.demo.validator.ValidCharacters
 import jakarta.validation.Valid
 import jakarta.validation.constraints.Min
 import org.slf4j.LoggerFactory
@@ -9,9 +12,16 @@ import java.util.*
 
 data class User(val id: UUID, val name: String)
 
+@StartBeforeEnd
+data class TimeRangeRequest(
+    val start: Long,
+    val end: Long
+)
+
 data class SearchRequest(
+    @field:ValidCharacters(ngChars = "*", message = "アスタリスクを含むワードは指定できません")
     val word: String?,
-    @field:Min(0)
+    @field:Min(0, message = "マイナスは不可です")
     val offset: Int?,
     @field:Min(1)
     val limit: Int?
