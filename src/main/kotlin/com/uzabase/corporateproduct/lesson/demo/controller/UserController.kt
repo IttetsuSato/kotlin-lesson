@@ -34,14 +34,12 @@ data class TimeRangeRequest(
 )
 
 data class SearchRequest(
-    @field:Min(0, message = "マイナスは不可です")
+    @field:Min(0)
     val offset: Int?,
     @field:Min(1)
     val limit: Int?,
-    @field:ValidCharacters(ngChars = "*", message = "アスタリスクを含むワードは指定できません")
-    @field:Max(30)
+    @field:ValidCharacters(ngChars = "*")
     val word: String?,
-    @field:Max(1024)
     val email: String?
 )
 

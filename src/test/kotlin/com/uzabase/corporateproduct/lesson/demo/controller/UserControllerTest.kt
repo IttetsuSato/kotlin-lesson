@@ -16,13 +16,13 @@ import org.slf4j.LoggerFactory
 import java.util.stream.Stream
 
 data class TestData(
-    val title: String,
     val offset: Int,
     val limit: Int,
     val word: String,
     val email: String,
     val expectedStatus: Int,
-    val expectedError: String?
+    val expectedKey: String? = null,
+    val expectedError: String? = null
 )
 
 @WebMvcTest
@@ -37,10 +37,10 @@ class UserControllerTest {
         @JvmStatic
         fun provideSearchRequestParameters(): Stream<Arguments> {
             return Stream.of(
-                Arguments.of("正常系（offsetが0, limitが1, wordが適切な文字列）", 0, 1, "validWord", "", 200, null),
-                Arguments.of("offsetが-1", -1, 1, "validWord", "", 400, "マイナスは不可です"),
-                Arguments.of("limitが0", 0, 0, "validWord", "", 400, "must be greater than or equal to 1"),
-                Arguments.of("wordがアスタリスクを含む", 0, 1, "invalid*word", "", 400, "アスタリスクを含むワードは指定できません")
+                Arguments.of("正常系（offsetが0, limitが1, wordが適切な文字列）", TestData( 0, 1, "validWord", "", 200)),
+                Arguments.of("offsetが-1", TestData(-1, 1, "validWord", "", 400, "offset", "must be greater than or equal to 0")),
+                Arguments.of("limitが0", TestData(0, 0, "validWord", "", 400, "limit", "must be greater than or equal to 1")),
+                Arguments.of("wordがアスタリスクを含む", TestData(0, 1, "invalid*word", "", 400, "word", "Contains invalid characters: *"))
             )
         }
     }
@@ -48,18 +48,17 @@ class UserControllerTest {
     @ParameterizedTest(name = "{0}")
     @MethodSource("provideSearchRequestParameters")
     @DisplayName("Validation tests for /users/search")
-    fun validateSearchRequest(testTitle: String, offset: Int, limit: Int, word: String, email: String, expectedStatus: Int, expectedError: String?) {
-        val requestMap = mapOf("offset" to offset, "limit" to limit, "word" to word, "email" to email)
+    fun validateSearchRequest(testTitle: String, testData: TestData) {
+        val requestMap = mapOf("offset" to testData.offset, "limit" to testData.limit, "word" to testData.word, "email" to testData.email)
         val logger = LoggerFactory.getLogger(javaClass)
-        logger.debug("requestJson: {}", requestJson)
+        logger.debug("requestJson: {}", requestMap)
 
         val requestJson = objectMapper.writeValueAsString(requestMap)
         val resultActions = mockMvc.perform(post("/users/search").contentType(MediaType.APPLICATION_JSON).content(requestJson))
-            .andExpect(status().`is`(expectedStatus))
+            .andExpect(status().`is`(testData.expectedStatus))
 
-        if (expectedError != null) {
-            resultActions.andExpect(jsonPath("$.offset").value(expectedError))
+        if (testData.expectedError != null) {
+            resultActions.andExpect(jsonPath("$.${testData.expectedKey}").value(testData.expectedError))
         }
-
     }
 }
