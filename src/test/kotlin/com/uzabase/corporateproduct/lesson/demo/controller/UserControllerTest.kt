@@ -40,7 +40,12 @@ class UserControllerTest {
                 Arguments.of("正常系（offsetが0, limitが1, wordが適切な文字列）", TestData( 0, 1, "validWord", "", 200)),
                 Arguments.of("offsetが-1", TestData(-1, 1, "validWord", "", 400, "offset", "must be greater than or equal to 0")),
                 Arguments.of("limitが0", TestData(0, 0, "validWord", "", 400, "limit", "must be greater than or equal to 1")),
-                Arguments.of("wordがアスタリスクを含む", TestData(0, 1, "invalid*word", "", 400, "word", "Contains invalid characters: *"))
+                Arguments.of("wordがアスタリスクを含む", TestData(0, 1, "invalid*word", "", 400, "word", "Contains invalid characters: *")),
+                Arguments.of("wordが30文字", TestData(0, 1, "", "", 400)),
+                Arguments.of("wordが31文字", TestData(0, 1, "a".repeat(31), "", 400, "word", "size must be between 0 and 30")),
+                Arguments.of("emailが1024文字", TestData(0, 1, "", "a".repeat(1024), 200)),
+                Arguments.of("emailが1025文字", TestData(0, 1, "", "a".repeat(1025), 400, "email", "size must be between 0 and 1024")),
+                Arguments.of("wordとemailが両方指定されている", TestData(0, 1, "validWord", "validEmail", 400 )),
             )
         }
     }

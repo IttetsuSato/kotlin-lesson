@@ -3,9 +3,11 @@ package com.uzabase.corporateproduct.lesson.demo.controller
 // jakartaってなんだろう
 import com.uzabase.corporateproduct.lesson.demo.validator.StartBeforeEnd
 import com.uzabase.corporateproduct.lesson.demo.validator.ValidCharacters
+import com.uzabase.corporateproduct.lesson.demo.validator.WordOrEmailRequired
 import jakarta.validation.Valid
 import jakarta.validation.constraints.Max
 import jakarta.validation.constraints.Min
+import jakarta.validation.constraints.Size
 import org.slf4j.LoggerFactory
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
@@ -17,8 +19,8 @@ data class User(val id: UUID, val name: String)
 //emailプロパティは、「メールアドレスであること」を検証する必要があります。
 //wordとemailは、必ずどちらかが指定されている必要があります。
 //wordとemailは、どちらかしか指定できません（両方入っているのはNG）
-//wordの長さの上限は30文字です
-//emailの長さの上限は1024文字です
+//v wordの長さの上限は30文字です
+//v emailの長さの上限は1024文字です
 //wordとemailどちらを指定するにせよ、空文字はNGです
 //v offsetの下限は0です
 //v limitの下限は1です。
@@ -33,13 +35,16 @@ data class TimeRangeRequest(
     val end: Long
 )
 
+@WordOrEmailRequired
 data class SearchRequest(
     @field:Min(0)
     val offset: Int?,
     @field:Min(1)
     val limit: Int?,
     @field:ValidCharacters(ngChars = "*")
+    @field:Size(max = 30)
     val word: String?,
+    @field:Size(max = 1024)
     val email: String?
 )
 
