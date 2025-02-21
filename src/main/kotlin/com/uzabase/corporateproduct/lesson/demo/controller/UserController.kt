@@ -5,7 +5,6 @@ import com.uzabase.corporateproduct.lesson.demo.validator.StartBeforeEnd
 import com.uzabase.corporateproduct.lesson.demo.validator.ValidCharacters
 import com.uzabase.corporateproduct.lesson.demo.validator.WordOrEmailRequired
 import jakarta.validation.Valid
-import jakarta.validation.constraints.Max
 import jakarta.validation.constraints.Min
 import jakarta.validation.constraints.Size
 import org.slf4j.LoggerFactory
@@ -14,14 +13,14 @@ import org.springframework.web.bind.annotation.*
 import java.util.*
 
 data class User(val id: UUID, val name: String)
-///users/searchハンドラを改造します
-//SearchRequestクラスに、新たにemailという、Null許可の文字列プロパティを追加します
+//v /users/searchハンドラを改造します
+//v SearchRequestクラスに、新たにemailという、Null許可の文字列プロパティを追加します
 //emailプロパティは、「メールアドレスであること」を検証する必要があります。
-//wordとemailは、必ずどちらかが指定されている必要があります。
-//wordとemailは、どちらかしか指定できません（両方入っているのはNG）
+//v wordとemailは、必ずどちらかが指定されている必要があります。
+//v wordとemailは、どちらかしか指定できません（両方入っているのはNG）
 //v wordの長さの上限は30文字です
 //v emailの長さの上限は1024文字です
-//wordとemailどちらを指定するにせよ、空文字はNGです
+//v wordとemailどちらを指定するにせよ、空文字はNGです
 //v offsetの下限は0です
 //v limitの下限は1です。
 //受け取ったすべてのパラメータを、ログに出力してください。
