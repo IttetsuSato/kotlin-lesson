@@ -1,6 +1,6 @@
 package com.uzabase.corporateproduct.lesson.demo.controller
 
-// jakartaってなんだろう
+import com.uzabase.corporateproduct.lesson.demo.validator.Email
 import com.uzabase.corporateproduct.lesson.demo.validator.StartBeforeEnd
 import com.uzabase.corporateproduct.lesson.demo.validator.ValidCharacters
 import com.uzabase.corporateproduct.lesson.demo.validator.WordOrEmailRequired
@@ -13,21 +13,6 @@ import org.springframework.web.bind.annotation.*
 import java.util.*
 
 data class User(val id: UUID, val name: String)
-//v /users/searchハンドラを改造します
-//v SearchRequestクラスに、新たにemailという、Null許可の文字列プロパティを追加します
-//emailプロパティは、「メールアドレスであること」を検証する必要があります。
-//v wordとemailは、必ずどちらかが指定されている必要があります。
-//v wordとemailは、どちらかしか指定できません（両方入っているのはNG）
-//v wordの長さの上限は30文字です
-//v emailの長さの上限は1024文字です
-//v wordとemailどちらを指定するにせよ、空文字はNGです
-//v offsetの下限は0です
-//v limitの下限は1です。
-//受け取ったすべてのパラメータを、ログに出力してください。
-//offsetが指定されていない場合は、offsetは0とみなします
-//limitが指定されていない場合は、limitは20とみなします
-//すべてのバリデーション定義について、自動テストを実装してください
-//入力値に範囲がある場合は、エラーとなる境界を指定してテストしてください（成功するケースと失敗するケース）
 @StartBeforeEnd
 data class TimeRangeRequest(
     val start: Long,
@@ -37,12 +22,13 @@ data class TimeRangeRequest(
 @WordOrEmailRequired
 data class SearchRequest(
     @field:Min(0)
-    val offset: Int?,
+    val offset: Int? = 0,
     @field:Min(1)
-    val limit: Int?,
+    val limit: Int? = 20,
     @field:ValidCharacters(ngChars = "*")
     @field:Size(max = 30)
     val word: String?,
+    @field:Email
     @field:Size(max = 1024)
     val email: String?
 )

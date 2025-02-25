@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.RestControllerAdvice
 class GlobalExceptionHandler {
     @ExceptionHandler(MethodArgumentNotValidException::class)
     fun handleValidationExceptions(ex: MethodArgumentNotValidException): ResponseEntity<Map<String, String>> {
-        val errors = ex.bindingResult.fieldErrors.associate { it.field to it.defaultMessage.orEmpty() }
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errors)
+        val globalErrors = ex.bindingResult.globalErrors.associate { it.objectName to it.defaultMessage.orEmpty() }
+        val fieldErrors = ex.bindingResult.fieldErrors.associate { it.field to it.defaultMessage.orEmpty() }
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(globalErrors + fieldErrors)
     }
 }

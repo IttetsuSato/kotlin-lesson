@@ -1,139 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.uzabase.corporateproduct.lesson.demo.controller.UserControllerTest" tests="9" skipped="0" failures="2" errors="0" timestamp="2025-02-21T00:16:17" hostname="CKGP23XYCC" time="0.727">
+<testsuite name="com.uzabase.corporateproduct.lesson.demo.controller.UserControllerTest" tests="14" skipped="0" failures="0" errors="0" timestamp="2025-02-25T00:07:15" hostname="CKGP23XYCC" time="0.702">
   <properties/>
-  <testcase name="正常系（offsetが0, limitが1, wordが適切な文字列）" classname="com.uzabase.corporateproduct.lesson.demo.controller.UserControllerTest" time="0.643"/>
-  <testcase name="offsetが-1" classname="com.uzabase.corporateproduct.lesson.demo.controller.UserControllerTest" time="0.042"/>
-  <testcase name="limitが0" classname="com.uzabase.corporateproduct.lesson.demo.controller.UserControllerTest" time="0.005"/>
-  <testcase name="wordがアスタリスクを含む" classname="com.uzabase.corporateproduct.lesson.demo.controller.UserControllerTest" time="0.009">
-    <failure message="java.lang.AssertionError: JSON path &quot;$.word&quot; expected:&lt;must not contain *&gt; but was:&lt;Contains invalid characters: *&gt;" type="java.lang.AssertionError">java.lang.AssertionError: JSON path &quot;$.word&quot; expected:&lt;must not contain *&gt; but was:&lt;Contains invalid characters: *&gt;
-	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:61)
-	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:128)
-	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:172)
-	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$value$2(JsonPathResultMatchers.java:112)
-	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
-	at com.uzabase.corporateproduct.lesson.demo.controller.UserControllerTest.validateSearchRequest(UserControllerTest.kt:71)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
-	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
-	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
-	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
-	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
-	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
-	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
-	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-</failure>
-  </testcase>
-  <testcase name="wordが30文字" classname="com.uzabase.corporateproduct.lesson.demo.controller.UserControllerTest" time="0.003"/>
+  <testcase name="offset, limitが指定されている" classname="com.uzabase.corporateproduct.lesson.demo.controller.UserControllerTest" time="0.592"/>
+  <testcase name="offsetが0, limitを指定しない" classname="com.uzabase.corporateproduct.lesson.demo.controller.UserControllerTest" time="0.004"/>
+  <testcase name="offsetを指定しない, limitが1" classname="com.uzabase.corporateproduct.lesson.demo.controller.UserControllerTest" time="0.004"/>
+  <testcase name="offsetが-1" classname="com.uzabase.corporateproduct.lesson.demo.controller.UserControllerTest" time="0.051"/>
+  <testcase name="limitが0" classname="com.uzabase.corporateproduct.lesson.demo.controller.UserControllerTest" time="0.004"/>
+  <testcase name="wordがアスタリスクを含む" classname="com.uzabase.corporateproduct.lesson.demo.controller.UserControllerTest" time="0.005"/>
+  <testcase name="wordが30文字" classname="com.uzabase.corporateproduct.lesson.demo.controller.UserControllerTest" time="0.004"/>
   <testcase name="wordが31文字" classname="com.uzabase.corporateproduct.lesson.demo.controller.UserControllerTest" time="0.004"/>
+  <testcase name="emailが不正なフォーマット" classname="com.uzabase.corporateproduct.lesson.demo.controller.UserControllerTest" time="0.004"/>
   <testcase name="emailが1024文字" classname="com.uzabase.corporateproduct.lesson.demo.controller.UserControllerTest" time="0.003"/>
-  <testcase name="emailが1025文字" classname="com.uzabase.corporateproduct.lesson.demo.controller.UserControllerTest" time="0.004"/>
-  <testcase name="wordとemailが両方指定されている" classname="com.uzabase.corporateproduct.lesson.demo.controller.UserControllerTest" time="0.005">
-    <failure message="java.lang.AssertionError: No value at JSON path &quot;$.word&quot;" type="java.lang.AssertionError">java.lang.AssertionError: No value at JSON path &quot;$.word&quot;
-	at org.springframework.test.util.JsonPathExpectationsHelper.evaluateJsonPath(JsonPathExpectationsHelper.java:351)
-	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:148)
-	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$value$2(JsonPathResultMatchers.java:112)
-	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
-	at com.uzabase.corporateproduct.lesson.demo.controller.UserControllerTest.validateSearchRequest(UserControllerTest.kt:71)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
-	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
-	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
-	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
-	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
-	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
-	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
-	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-Caused by: com.jayway.jsonpath.PathNotFoundException: No results for path: $['word']
-</failure>
-  </testcase>
-  <system-out><![CDATA[09:16:16.518 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.uzabase.corporateproduct.lesson.demo.controller.UserControllerTest]: UserControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-09:16:16.607 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.uzabase.corporateproduct.lesson.demo.DemoApplication for test class com.uzabase.corporateproduct.lesson.demo.controller.UserControllerTest
+  <testcase name="emailが1025文字" classname="com.uzabase.corporateproduct.lesson.demo.controller.UserControllerTest" time="0.003"/>
+  <testcase name="wordとemailが両方指定されている" classname="com.uzabase.corporateproduct.lesson.demo.controller.UserControllerTest" time="0.003"/>
+  <testcase name="wordが空文字" classname="com.uzabase.corporateproduct.lesson.demo.controller.UserControllerTest" time="0.004"/>
+  <testcase name="emailが空文字" classname="com.uzabase.corporateproduct.lesson.demo.controller.UserControllerTest" time="0.004"/>
+  <system-out><![CDATA[09:07:14.672 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.uzabase.corporateproduct.lesson.demo.controller.UserControllerTest]: UserControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+09:07:14.745 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.uzabase.corporateproduct.lesson.demo.DemoApplication for test class com.uzabase.corporateproduct.lesson.demo.controller.UserControllerTest
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -144,99 +27,32 @@ Caused by: com.jayway.jsonpath.PathNotFoundException: No results for path: $['wo
 
  :: Spring Boot ::                (v3.4.2)
 
-2025-02-21T09:16:16.859+09:00  INFO 49811 --- [demo] [    Test worker] c.u.c.l.d.controller.UserControllerTest  : Starting UserControllerTest using Java 21.0.6 with PID 49811 (started by ittetsu.sato in /Users/ittetsu.sato/kotlin-lesson)
-2025-02-21T09:16:16.859+09:00 DEBUG 49811 --- [demo] [    Test worker] c.u.c.l.d.controller.UserControllerTest  : Running with Spring Boot v3.4.2, Spring v6.2.2
-2025-02-21T09:16:16.860+09:00  INFO 49811 --- [demo] [    Test worker] c.u.c.l.d.controller.UserControllerTest  : No active profile set, falling back to 1 default profile: "default"
-2025-02-21T09:16:17.401+09:00  INFO 49811 --- [demo] [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2025-02-21T09:16:17.401+09:00  INFO 49811 --- [demo] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2025-02-21T09:16:17.402+09:00  INFO 49811 --- [demo] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2025-02-21T09:16:17.454+09:00  INFO 49811 --- [demo] [    Test worker] c.u.c.l.d.controller.UserControllerTest  : Started UserControllerTest in 0.753 seconds (process running for 1.508)
-2025-02-21T09:16:17.934+09:00 DEBUG 49811 --- [demo] [    Test worker] c.u.c.l.d.controller.UserControllerTest  : requestJson: {offset=0, limit=1, word=validWord, email=null}
-2025-02-21T09:16:18.079+09:00 DEBUG 49811 --- [demo] [    Test worker] c.u.c.l.demo.controller.UserController   : body: SearchRequest(offset=0, limit=1, word=validWord, email=null)
-2025-02-21T09:16:18.105+09:00 DEBUG 49811 --- [demo] [    Test worker] c.u.c.l.d.controller.UserControllerTest  : requestJson: {offset=-1, limit=1, word=validWord, email=null}
-2025-02-21T09:16:18.148+09:00 DEBUG 49811 --- [demo] [    Test worker] c.u.c.l.d.controller.UserControllerTest  : requestJson: {offset=0, limit=0, word=validWord, email=null}
-2025-02-21T09:16:18.153+09:00 DEBUG 49811 --- [demo] [    Test worker] c.u.c.l.d.controller.UserControllerTest  : requestJson: {offset=0, limit=1, word=invalid*Word, email=null}
-
-MockHttpServletRequest:
-      HTTP Method = POST
-      Request URI = /users/search
-       Parameters = {}
-          Headers = [Content-Type:"application/json;charset=UTF-8", Content-Length:"57"]
-             Body = {"offset":0,"limit":1,"word":"invalid*Word","email":null}
-    Session Attrs = {}
-
-Handler:
-             Type = com.uzabase.corporateproduct.lesson.demo.controller.UserController
-           Method = com.uzabase.corporateproduct.lesson.demo.controller.UserController#searchUsers(SearchRequest)
-
-Async:
-    Async started = false
-     Async result = null
-
-Resolved Exception:
-             Type = org.springframework.web.bind.MethodArgumentNotValidException
-
-ModelAndView:
-        View name = null
-             View = null
-            Model = null
-
-FlashMap:
-       Attributes = null
-
-MockHttpServletResponse:
-           Status = 400
-    Error message = null
-          Headers = [Content-Type:"application/json"]
-     Content type = application/json
-             Body = {"word":"Contains invalid characters: *"}
-    Forwarded URL = null
-   Redirected URL = null
-          Cookies = []
-2025-02-21T09:16:18.164+09:00 DEBUG 49811 --- [demo] [    Test worker] c.u.c.l.d.controller.UserControllerTest  : requestJson: {offset=0, limit=1, word=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa, email=null}
-2025-02-21T09:16:18.165+09:00 DEBUG 49811 --- [demo] [    Test worker] c.u.c.l.demo.controller.UserController   : body: SearchRequest(offset=0, limit=1, word=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa, email=null)
-2025-02-21T09:16:18.168+09:00 DEBUG 49811 --- [demo] [    Test worker] c.u.c.l.d.controller.UserControllerTest  : requestJson: {offset=0, limit=1, word=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa, email=null}
-2025-02-21T09:16:18.172+09:00 DEBUG 49811 --- [demo] [    Test worker] c.u.c.l.d.controller.UserControllerTest  : requestJson: {offset=0, limit=1, word=null, email=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa}
-2025-02-21T09:16:18.173+09:00 DEBUG 49811 --- [demo] [    Test worker] c.u.c.l.demo.controller.UserController   : body: SearchRequest(offset=0, limit=1, word=null, email=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa)
-2025-02-21T09:16:18.177+09:00 DEBUG 49811 --- [demo] [    Test worker] c.u.c.l.d.controller.UserControllerTest  : requestJson: {offset=0, limit=1, word=null, email=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa}
-2025-02-21T09:16:18.181+09:00 DEBUG 49811 --- [demo] [    Test worker] c.u.c.l.d.controller.UserControllerTest  : requestJson: {offset=0, limit=1, word=validWord, email=validEmail}
-
-MockHttpServletRequest:
-      HTTP Method = POST
-      Request URI = /users/search
-       Parameters = {}
-          Headers = [Content-Type:"application/json;charset=UTF-8", Content-Length:"62"]
-             Body = {"offset":0,"limit":1,"word":"validWord","email":"validEmail"}
-    Session Attrs = {}
-
-Handler:
-             Type = com.uzabase.corporateproduct.lesson.demo.controller.UserController
-           Method = com.uzabase.corporateproduct.lesson.demo.controller.UserController#searchUsers(SearchRequest)
-
-Async:
-    Async started = false
-     Async result = null
-
-Resolved Exception:
-             Type = org.springframework.web.bind.MethodArgumentNotValidException
-
-ModelAndView:
-        View name = null
-             View = null
-            Model = null
-
-FlashMap:
-       Attributes = null
-
-MockHttpServletResponse:
-           Status = 400
-    Error message = null
-          Headers = [Content-Type:"application/json"]
-     Content type = application/json
-             Body = {}
-    Forwarded URL = null
-   Redirected URL = null
-          Cookies = []
+2025-02-25T09:07:14.965+09:00  INFO 84693 --- [demo] [    Test worker] c.u.c.l.d.controller.UserControllerTest  : Starting UserControllerTest using Java 21.0.6 with PID 84693 (started by ittetsu.sato in /Users/ittetsu.sato/kotlin-lesson)
+2025-02-25T09:07:14.966+09:00 DEBUG 84693 --- [demo] [    Test worker] c.u.c.l.d.controller.UserControllerTest  : Running with Spring Boot v3.4.2, Spring v6.2.2
+2025-02-25T09:07:14.966+09:00  INFO 84693 --- [demo] [    Test worker] c.u.c.l.d.controller.UserControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2025-02-25T09:07:15.532+09:00  INFO 84693 --- [demo] [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-02-25T09:07:15.532+09:00  INFO 84693 --- [demo] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-02-25T09:07:15.533+09:00  INFO 84693 --- [demo] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-02-25T09:07:15.549+09:00  INFO 84693 --- [demo] [    Test worker] c.u.c.l.d.controller.UserControllerTest  : Started UserControllerTest in 0.749 seconds (process running for 1.302)
+2025-02-25T09:07:15.975+09:00 DEBUG 84693 --- [demo] [    Test worker] c.u.c.l.d.controller.UserControllerTest  : requestJson: {offset=0, limit=1, word=validWord, email=null}
+2025-02-25T09:07:16.121+09:00 DEBUG 84693 --- [demo] [    Test worker] c.u.c.l.demo.controller.UserController   : body: SearchRequest(offset=0, limit=1, word=validWord, email=null)
+2025-02-25T09:07:16.148+09:00 DEBUG 84693 --- [demo] [    Test worker] c.u.c.l.d.controller.UserControllerTest  : requestJson: {offset=0, limit=null, word=validWord, email=null}
+2025-02-25T09:07:16.149+09:00 DEBUG 84693 --- [demo] [    Test worker] c.u.c.l.demo.controller.UserController   : body: SearchRequest(offset=0, limit=null, word=validWord, email=null)
+2025-02-25T09:07:16.153+09:00 DEBUG 84693 --- [demo] [    Test worker] c.u.c.l.d.controller.UserControllerTest  : requestJson: {offset=null, limit=1, word=validWord, email=null}
+2025-02-25T09:07:16.154+09:00 DEBUG 84693 --- [demo] [    Test worker] c.u.c.l.demo.controller.UserController   : body: SearchRequest(offset=null, limit=1, word=validWord, email=null)
+2025-02-25T09:07:16.158+09:00 DEBUG 84693 --- [demo] [    Test worker] c.u.c.l.d.controller.UserControllerTest  : requestJson: {offset=-1, limit=null, word=validWord, email=null}
+2025-02-25T09:07:16.209+09:00 DEBUG 84693 --- [demo] [    Test worker] c.u.c.l.d.controller.UserControllerTest  : requestJson: {offset=null, limit=0, word=validWord, email=null}
+2025-02-25T09:07:16.215+09:00 DEBUG 84693 --- [demo] [    Test worker] c.u.c.l.d.controller.UserControllerTest  : requestJson: {offset=null, limit=null, word=invalid*Word, email=null}
+2025-02-25T09:07:16.220+09:00 DEBUG 84693 --- [demo] [    Test worker] c.u.c.l.d.controller.UserControllerTest  : requestJson: {offset=null, limit=null, word=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa, email=null}
+2025-02-25T09:07:16.222+09:00 DEBUG 84693 --- [demo] [    Test worker] c.u.c.l.demo.controller.UserController   : body: SearchRequest(offset=null, limit=null, word=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa, email=null)
+2025-02-25T09:07:16.225+09:00 DEBUG 84693 --- [demo] [    Test worker] c.u.c.l.d.controller.UserControllerTest  : requestJson: {offset=null, limit=null, word=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa, email=null}
+2025-02-25T09:07:16.230+09:00 DEBUG 84693 --- [demo] [    Test worker] c.u.c.l.d.controller.UserControllerTest  : requestJson: {offset=null, limit=null, word=null, email=invalidEmail}
+2025-02-25T09:07:16.234+09:00 DEBUG 84693 --- [demo] [    Test worker] c.u.c.l.d.controller.UserControllerTest  : requestJson: {offset=null, limit=null, word=null, email=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@example.com}
+2025-02-25T09:07:16.235+09:00 DEBUG 84693 --- [demo] [    Test worker] c.u.c.l.demo.controller.UserController   : body: SearchRequest(offset=null, limit=null, word=null, email=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@example.com)
+2025-02-25T09:07:16.238+09:00 DEBUG 84693 --- [demo] [    Test worker] c.u.c.l.d.controller.UserControllerTest  : requestJson: {offset=null, limit=null, word=null, email=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@example.com}
+2025-02-25T09:07:16.242+09:00 DEBUG 84693 --- [demo] [    Test worker] c.u.c.l.d.controller.UserControllerTest  : requestJson: {offset=null, limit=null, word=validWord, email=validEmail}
+2025-02-25T09:07:16.247+09:00 DEBUG 84693 --- [demo] [    Test worker] c.u.c.l.d.controller.UserControllerTest  : requestJson: {offset=null, limit=null, word=, email=null}
+2025-02-25T09:07:16.251+09:00 DEBUG 84693 --- [demo] [    Test worker] c.u.c.l.d.controller.UserControllerTest  : requestJson: {offset=null, limit=null, word=null, email=}
 ]]></system-out>
   <system-err><![CDATA[Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build what is described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html#0.3
 WARNING: A Java agent has been loaded dynamically (/Users/ittetsu.sato/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.15.11/a38b16385e867f59a641330f0362ebe742788ed8/byte-buddy-agent-1.15.11.jar)

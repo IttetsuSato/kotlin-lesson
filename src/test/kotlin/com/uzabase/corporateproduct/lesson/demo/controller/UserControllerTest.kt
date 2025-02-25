@@ -22,8 +22,8 @@ data class Expected(
 )
 
 data class TestData(
-    val offset: Int,
-    val limit: Int,
+    val offset: Int? = null,
+    val limit: Int? = null,
     val word: String? = null,
     val email: String? = null,
     val expected: Expected
@@ -41,15 +41,20 @@ class UserControllerTest {
         @JvmStatic
         fun provideSearchRequestParameters(): Stream<Arguments> {
             return Stream.of(
-                Arguments.of("正常系（offsetが0, limitが1, wordが適切な文字列）", TestData( offset = 0, limit = 1, word = "validWord", expected = Expected(200))),
-                Arguments.of("offsetが-1", TestData(offset = -1, limit = 1, word = "validWord", expected = Expected(400, "offset", "must be greater than or equal to 0"))),
-                Arguments.of("limitが0", TestData(offset = 0, limit = 0, word = "validWord", expected = Expected(400, "limit", "must be greater than or equal to 1"))),
-                Arguments.of("wordがアスタリスクを含む", TestData(offset = 0, limit = 1, word = "invalid*Word", expected = Expected(400, "word", "Contains invalid characters: *"))),
-                Arguments.of("wordが30文字", TestData(offset = 0, limit = 1, word = "a".repeat(30), expected = Expected(200))),
-                Arguments.of("wordが31文字", TestData(offset = 0, limit = 1, word = "a".repeat(31), expected = Expected(400, "word", "size must be between 0 and 30"))),
-                Arguments.of("emailが1024文字", TestData(offset = 0, limit = 1, email = "a".repeat(1024), expected = Expected(200))),
-                Arguments.of("emailが1025文字", TestData(offset = 0, limit = 1, email = "a".repeat(1025), expected = Expected(400, "email", "size must be between 0 and 1024"))),
-                Arguments.of("wordとemailが両方指定されている", TestData(offset = 0, limit = 1, word = "validWord", email = "validEmail", expected = Expected(400, "word", "must be null")))
+                Arguments.of("offset, limitが指定されている", TestData(offset = 0, limit = 1, word = "validWord", expected = Expected(200))),
+                Arguments.of("offsetが0, limitを指定しない", TestData(offset = 0, word = "validWord", expected = Expected(200))),
+                Arguments.of("offsetを指定しない, limitが1", TestData(limit = 1, word = "validWord", expected = Expected(200))),
+                Arguments.of("offsetが-1", TestData(offset = -1, word = "validWord", expected = Expected(400, "offset", "must be greater than or equal to 0"))),
+                Arguments.of("limitが0", TestData(limit = 0, word = "validWord", expected = Expected(400, "limit", "must be greater than or equal to 1"))),
+                Arguments.of("wordがアスタリスクを含む", TestData(word = "invalid*Word", expected = Expected(400, "word", "Contains invalid characters: *"))),
+                Arguments.of("wordが30文字", TestData(word = "a".repeat(30), expected = Expected(200))),
+                Arguments.of("wordが31文字", TestData(word = "a".repeat(31), expected = Expected(400, "word", "size must be between 0 and 30"))),
+                Arguments.of("emailが不正なフォーマット", TestData(email = "invalidEmail", expected = Expected(400, "email", "Invalid email format"))),
+                Arguments.of("emailが1024文字", TestData(email = "a".repeat(1012) + "@example.com", expected = Expected(200))),
+                Arguments.of("emailが1025文字", TestData(email = "a".repeat(1013) + "@example.com", expected = Expected(400, "email", "size must be between 0 and 1024"))),
+                Arguments.of("wordとemailが両方指定されている", TestData(word = "validWord", email = "validEmail", expected = Expected(400, "searchRequest", "Either word or email is required"))),
+                Arguments.of("wordが空文字", TestData(word = "", expected = Expected(400, "searchRequest", "Either word or email is required"))),
+                Arguments.of("emailが空文字", TestData(email = "", expected = Expected(400, "searchRequest", "Either word or email is required")))
             )
         }
     }
